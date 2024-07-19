@@ -1,5 +1,5 @@
 ---
-name: Molecule CI Test
+name: Ansible Lint CI Test
 on:
   pull_request:
   push:
