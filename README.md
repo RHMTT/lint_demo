@@ -1,4 +1,4 @@
-# Ansible LAMP Stack Playbook
+# Ansible LAMP Stack Playbook.
 This is a Ansible Playbook to deploy a LAMP Stack infrastructure on ubuntu/debian hosts. 
 
 ### Stack -
