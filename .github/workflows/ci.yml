@@ -1,0 +1,23 @@
+---
+name: Ansible Lint CI Test
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    name: ansible-lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
+      - uses: addnab/docker-run-action@v3
+        with:
+          registry: register-1.docker.io
+          image: marshcroft/lint-ee:latest
+          options: -v ${{ github.workspace }}:/home/runner/ansible --workdir=/home/runner/ansible
+          run: |
+            echo "Running Script"
+            pytest /home/runner/scripts/lint.py
